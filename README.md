@@ -28,6 +28,7 @@ WHEN I open my application in my editor
 THEN I should see a client server folder structure
 WHEN I run `npm run start` from the root directory
 THEN I find that my application should start up the backend and serve the client
+
 WHEN I run the text editor application from my terminal
 THEN I find that my JavaScript files have been bundled using webpack
 WHEN I run my webpack plugins
@@ -67,20 +68,6 @@ The following image shows the application's registered service worker:
 The following image shows the application's IndexedDB storage:
 
 ![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> - A repository that has no code
->
-> - A repository that includes a unique name but nothing else
->
-> - A repository that includes only a README file but nothing else
->
-> - A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
 
 ### Technical Acceptance Criteria: 40%
 
