@@ -1,27 +1,3 @@
-warmStrategyCache({
-  urls: ["/index.html", "/"],
-  strategy: pageCache,
-});
-
-registerRoute(({ request }) => request.mode === "navigate", pageCache);
-
-// Asset caching
-registerRoute(
-  ({ request }) => request.destination === "image",
-  new CacheFirst({
-    cacheName: "assets",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new ExpirationPlugin({
-        maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-      }),
-    ],
-  })
-);
-
 const { offlineFallback, warmStrategyCache } = require("workbox-recipes"); // HOW DO WE INCORPORATE OFFLINE FALLBACK??
 const { CacheFirst } = require("workbox-strategies");
 const { registerRoute } = require("workbox-routing");
