@@ -1,4 +1,5 @@
-// import { Workbox } from "workbox-window";
+// without import { Workbox } the service worker won't be registered be
+import { Workbox } from "workbox-window";
 import Editor from "./editor";
 import "./database";
 import "../css/style.css";
@@ -28,7 +29,7 @@ if ("serviceWorker" in navigator) {
   // register workbox service worker
   // is '/src-sw.js' accurate CHECK
 
-  const workboxSW = new Workbox("/src-sw.js");
+  const workboxSW = new Workbox("/src-sw.js"); // use the dot or not??
   workboxSW.register();
 } else {
   console.error("Service workers are not supported in this browser.");
