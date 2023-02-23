@@ -2,15 +2,15 @@
 // listening for requestsand finding ways to handle them before they go out.  Kind of like a proxy b/w our applic.
 // SW DOES NOT have access to the DOM or to the memory storage of our application.
 // so register route - we want to register A route that our service worker should be listening to.
-import { registerRoute } from "workbox-routing";
+const { registerRoute } = require("workbox-routing");
 // the first thing that register route needs is what routes do we want? It needs a function that it can run given the
 // http request.  It's a function that can take that and determine if the request matches a certain set of requirements
 // parameter 2 is how to handle it
-import { StaleWhileRevalidate, CacheFirst } from "workbox-strategies";
-import { CacheableResponsePlugin } from "workbox-cacheable-response";
-import { ExpirationPlugin } from "workbox-expiration";
-import { precacheAndRoute } from "workbox-precaching";
-import { offlineFallback, warmStrategyCache } from "workbox-recipes";
+const { StaleWhileRevalidate, CacheFirst } = require("workbox-strategies");
+const { CacheableResponsePlugin } = require("workbox-cacheable-response");
+const { ExpirationPlugin } = require("workbox-expiration");
+const { precacheAndRoute } = require("workbox-precaching/precacheAndRoute");
+const { offlineFallback, warmStrategyCache } = require("workbox-recipes");
 
 // placeholder that SW will use.  Webpack will take our code and resources by URL - webpack will put the list here below.
 // at build time this gets replaced by actual list of stuff.
@@ -88,4 +88,4 @@ registerRoute(
 //   })
 // );
 
-registerRoute();
+//registerRoute();
